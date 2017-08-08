@@ -79,7 +79,7 @@ def post_do(pic):
             a,b,c,d = index2[0].start, index2[0].stop, index2[1].start, index2[1].stop
             index3 = (slice(max(0, 2*a-b),min(pic.shape[0], 2*b-a)), slice(max(0, 2*c-d),min(pic.shape[1], 2*d-c)))
             if (pic[index3].sum() == index.sum()) and (1.0*index.sum()/(b-a)/(d-c) > 0.75):
-                pic[index2] = False    
+                pic[index2] = False
     t = map(post_do_one, trange(1, nb_labels+1))
     print u'后期去噪完成.'
     return pic

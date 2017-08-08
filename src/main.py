@@ -1,8 +1,9 @@
 # -*- coding:utf-8 -*-
 
 from scipy import ndimage
+from scipy import misc
 print u'加载图片工具中...'
-from images import *
+from image import *
 print u'加载OCR模型中...'
 from ocr import *
 print u'加载完毕.'
@@ -10,7 +11,10 @@ print u'加载完毕.'
 if __name__ == '__main__':
     filename = '../cn.jpg'
     p = myread(filename)
+    misc.imsave('01.jpg', p)
     dc = decompose(p)
+    misc.imsave('02.jpg', dc)
+    exit()
     layers = erosion_test(dc)
     result = pooling(layers)
     result = post_do(result)
