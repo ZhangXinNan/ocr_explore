@@ -1,2 +1,10 @@
 # ocr_explore
-ocr learn/practice/explore
+1. image.py——图像处理函数，主要是特征提取；
+
+2. model_training.py——训练CNN单字识别模型（需要较高性能的服务器，最好有GPU加速，否则真是慢得要死）；
+
+3. ocr.py——识别函数，包括单字分割、前面训练好的模型进行单字识别、动态规划提升效果；
+
+4. main.py——主文件，用来调用1、3两个文件。
+
+5. 我们的模型中包含的字.txt(UTF-8编码)
